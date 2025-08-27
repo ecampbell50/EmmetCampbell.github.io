@@ -41,9 +41,9 @@ body::before {
 /* Mobile adjustments */
 @media (max-width: 600px) {
     body::before {
-        width: 300px;
-        height: 300px;
-        bottom: 60px;
+        width: 350px;
+        height: 350px;
+        bottom: 70px;
         opacity: 0.4;
     }
 }
