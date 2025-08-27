@@ -9,27 +9,39 @@ body {
     line-height: 1.6;
     background: #f8f9fa;
     background-image: 
-        url('images/dantes-circles.svg'),
-        url('images/bacteriophage-schema.svg'),
         linear-gradient(rgba(135, 206, 235, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(135, 206, 235, 0.05) 1px, transparent 1px);
-    background-size: 
-        400px 400px,
-        300px 200px,
-        20px 20px,
-        20px 20px;
-    background-position: 
-        top left,
-        bottom right,
-        0 0,
-        0 0;
-    background-repeat: no-repeat, no-repeat, repeat, repeat;
-    background-attachment: fixed;
+    background-size: 20px 20px;
     min-height: 100vh;
     color: #333;
+    position: relative;
 }
 
+/* Add the Dante hell map as a background element */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background-image: url('images/netherhell3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 4px solid white;
+    opacity: 0.6;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure your content stays above the background */
 .container {
+    position: relative;
+    z-index: 1;
     max-width: 600px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -38,7 +50,10 @@ body {
 /* Header/Hero Section */
 .hero {
     text-align: center;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 40px 30px;
     border-radius: 20px;
     margin-bottom: 30px;
@@ -82,7 +97,10 @@ body {
 
 /* Links Section */
 .links-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 30px;
     border-radius: 20px;
     margin-bottom: 20px;
