@@ -21,7 +21,7 @@ body {
 body::before {
     content: '';
     position: fixed;
-    top: 400px;
+    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
     width: 400px;
@@ -36,6 +36,16 @@ body::before {
     z-index: -1;
     pointer-events: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    body::before {
+        width: 250px;
+        height: 250px;
+        bottom: 60px;
+        opacity: 0.4;
+    }
 }
 
 /* Make sure your content stays above the background */
